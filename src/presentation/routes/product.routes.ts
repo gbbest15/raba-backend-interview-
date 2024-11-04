@@ -12,6 +12,11 @@ export default (productController: ProductController) => {
     validateProductFilters,
     productController.compareProducts.bind(productController)
   );
-  
+
+  productRouter.get(
+    '/supplier/:supplierId',
+    productController.getSupplierOtherProducts.bind(productController)
+  );
+
   return productRouter;
 };
